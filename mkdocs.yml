@@ -125,8 +125,9 @@ plugins:
   - search
   - table-reader
   - social:
+      cards_layout: default/variant
       cards_layout_options:
         font_family: Google Sans Flex
         background_color: "#18001a"
         color: "#e9c6f0"
-        logo: assets_main/test.svg
+        logo: assets_main/blissos.svg
