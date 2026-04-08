@@ -17,10 +17,14 @@ You'll need these following:
 !!! Warning
 	A sparse image is a file that has been created by using the `dd` command with the `conv=notrunc` option. A bootable sparse image is a kernel or initrd image created using the same technique.
 
-	Most bootloaders prohibit booting sparse images, or unknown capability.
-	As for now, known sparse-supported bootloaders are: [GRUB](https://www.gnu.org/software/grub/) (works with non-CoW filesystems), [RefindPlus](https://github.com/RefindPlusRepo/RefindPlus).
-	Unsupported (tested) bootloaders: [rEFInd](https://www.rodsbooks.com/refind/).
-	Unplanned/Rejected: [limine](https://github.com/limine-bootloader/limine)
+	Most bootloaders/boot managers prohibit booting sparse images, or unknown capability.
+	As for now, known sparse-supported bootloaders/boot managers are: <br>
+	- [GRUB](https://www.gnu.org/software/grub/) (works with non-CoW filesystems) <br>
+	- [RefindPlus](https://github.com/RefindPlusRepo/RefindPlus). <br>
+	Unsupported: [rEFInd](https://www.rodsbooks.com/refind/). *(tested version 0.14.2)* <br>
+	Unplanned/Rejected: [limine](https://github.com/limine-bootloader/limine) <br>
+
+	For CoW filesystems like `btrfs`, if you want [AB-mode](#for-ab-mode-deployment), we'd recommend you to copy files & rename it to `*_a` intead of using `dd` commands like below on `*_a` images. Avoid doing OTA updates as it will switch to slot B and may cause broken boot.
 
 - A BlissOS .iso image (duh)
 
